@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp">
+
+
+    <TextView
+        android:id="@+id/hint1"
+        android:layout_width="147dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:hint="当前金额"
+        android:paddingRight="10dp"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/showmoney"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/hint1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/bg_intext"
+        android:maxLines="1"
+        android:paddingRight="10dp"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/et3_phone"
+        android:layout_width="225dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/showmoney"
+        android:layout_marginTop="5dp"
+        android:drawablePadding="20dp"
+        android:hint="交易记录"
+        android:inputType="number"
+        android:maxLines="1"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textSize="16sp" />
+    <TextView
+        android:id="@+id/showphonenumber"
+        android:layout_width="match_parent"
+        android:layout_below="@id/et3_phone"
+        android:layout_height="50dp"
+        android:textSize="16sp"
+        android:layout_marginTop="0dp"
+        android:paddingRight="10dp"
+        android:background="@drawable/bg_intext"
+        android:maxLines="1"
+        />
+    <Button
+        android:id="@+id/tixian"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="350dp"
+        android:background="@drawable/bg_btn"
+        android:text="提现"
+
+
+        />
+
+
+</RelativeLayout>

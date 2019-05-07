@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp">
+
+
+    <EditText
+        android:id="@+id/et1_name"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="16sp"
+        android:hint="用户名"
+        android:layout_marginTop="30dp"
+        android:paddingRight="10dp"
+        android:background="@drawable/bg_intext"
+        android:maxLines="1"
+        android:drawableLeft="@drawable/zhanghu"/>
+
+    <EditText
+        android:id="@+id/et3_phone"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/et1_name"
+        android:layout_marginTop="10dp"
+        android:textSize="16sp"
+        android:hint="手机号"
+        android:inputType="number"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:background="@drawable/bg_intext"
+        android:maxLines="1"
+        android:drawableLeft="@drawable/phone"
+        android:drawablePadding="20dp"/>
+    <Button
+        android:id="@+id/save_btn"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/et3_phone"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="120dp"
+        android:text="保存修改信息"
+        android:textSize="20sp"/>
+
+</RelativeLayout>

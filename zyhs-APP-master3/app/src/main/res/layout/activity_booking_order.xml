@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/addresschoose"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/bg_intext"
+            android:hint="收货地址"
+            android:paddingRight="10dp"
+            android:textSize="16sp"
+
+            />
+        <Button
+            android:id="@+id/chooseadd"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/booktime"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="0dp"
+            android:layout_toLeftOf="@id/choosetime"
+            android:text="选择地址"
+            android:textSize="20sp"
+
+            />
+
+        <TextView
+            android:id="@+id/bookdate"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/bg_intext"
+            android:ems="10"
+            android:hint="上门日期"
+            android:maxLines="1"
+            android:paddingRight="10dp"
+            android:textSize="16sp"
+
+
+            />
+
+        <Button
+            android:id="@+id/choosedate"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/booktime"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="0dp"
+            android:layout_toLeftOf="@id/choosetime"
+            android:text="选择日期"
+            android:textSize="20sp"
+
+            />
+
+        <TextView
+            android:id="@+id/booktime"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_intext"
+            android:ems="10"
+            android:hint="上门时间"
+            android:maxLines="1"
+            android:paddingRight="10dp"
+            android:textSize="16sp"
+
+
+            />
+
+        <Button
+            android:id="@+id/choosetime"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/booktime"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="0dp"
+            android:layout_toRightOf="@id/choosedate"
+            android:text="选择时间"
+            android:textSize="20sp" />
+
+
+        <EditText
+            android:id="@+id/thingstype"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_intext"
+            android:hint="物品种类"
+            android:maxLines="1"
+            android:paddingRight="10dp"
+            android:textSize="16sp"
+
+
+            />
+
+
+        <EditText
+            android:id="@+id/thingsnumber"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_intext"
+            android:hint="物品数量"
+            android:paddingRight="10dp"
+            android:textSize="16sp"
+
+
+            />
+
+
+        <Button
+            android:id="@+id/createbook"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="0dp"
+            android:text="创建预约"
+            android:textSize="20sp" />
+
+
+    </LinearLayout>
+</LinearLayout>

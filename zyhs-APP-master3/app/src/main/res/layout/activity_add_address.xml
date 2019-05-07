@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <EditText
+        android:id="@+id/editname"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="16sp"
+        android:hint="姓名"
+        android:layout_marginTop="30dp"
+        android:paddingRight="10dp"
+        android:background="@drawable/bg_intext"
+        android:drawableLeft="@drawable/zhanghu"
+        android:maxLines="1"
+        android:ems="10"
+        android:inputType="textPersonName"
+
+        />
+
+
+    <EditText
+        android:id="@+id/editphonenumber"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="16sp"
+        android:hint="电话"
+        android:inputType="number"
+        android:layout_marginTop="30dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:background="@drawable/bg_intext"
+        android:drawableLeft="@drawable/phone"
+        android:drawablePadding="20dp"
+        android:maxLines="1"
+        android:ems="11"
+
+        />
+    <EditText
+        android:id="@+id/editaddress"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="16sp"
+        android:hint="地址"
+        android:layout_marginTop="30dp"
+        android:paddingRight="10dp"
+        android:background="@drawable/bg_intext"
+        android:drawableLeft="@drawable/zhanghu"
+
+        />
+
+    <Button
+        android:id="@+id/addaddress"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:text="添加地址"
+        />
+
+</LinearLayout>

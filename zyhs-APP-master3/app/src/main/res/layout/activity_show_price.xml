@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="550dp"
+    >
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="460dp"
+       >
+
+       <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+           android:layout_width="match_parent"
+           android:layout_height="450dp"
+           android:layout_weight="2"
+           android:orientation="vertical">
+        <Button
+            android:id="@+id/metal"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:text="金属制品"
+            android:textSize="20dp"/>
+        <Button
+            android:id="@+id/plastic"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:text="塑料制品"
+            android:textSize="20dp"/>
+        <Button
+            android:id="@+id/paper"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:text="纸制品"
+            android:textSize="20dp"/>
+        <Button
+            android:id="@+id/oldbattery"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:text="废旧电池"
+            android:textSize="20dp"/>
+        <Button
+            android:id="@+id/homeappliance"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:text="家电回收"
+            android:textSize="20dp"/>
+        <Button
+            android:id="@+id/furniture"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:text="家具回收"
+            android:textSize="20dp"/>
+        <Button
+            android:id="@+id/drygoods"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:text="纺织品回收"
+            android:textSize="20dp"/>
+
+
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/showprice"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:text="展示商品价格"
+        android:layout_marginLeft="150dp"
+        android:textSize="30dp"
+        android:layout_weight="1"/>
+
+   </RelativeLayout>
+
+
+
+</LinearLayout>
+    <com.example.lhx.recovery.layoutcontrol
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"
+
+
+        />
+
+</LinearLayout>
+

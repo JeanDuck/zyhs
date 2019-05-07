@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".main_interface">
+
+
+
+    <TextView
+        android:id="@+id/huanyin"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:text="@string/hy"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:focusable="true"
+        android:focusableInTouchMode="true"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/yuyue"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/test_image" />
+
+        <Button
+            android:id="@+id/yyan"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:layout_below="@+id/yuyue"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="5dp"
+            android:text="预约"
+            android:background="@drawable/bg_btn"/>
+
+        <ImageView
+            android:id="@+id/dingdan"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_toRightOf="@id/yuyue"
+            android:src="@drawable/test_image" />
+
+        <Button
+            android:id="@+id/ddan"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:layout_below="@id/dingdan"
+            android:layout_toRightOf="@id/yyan"
+            android:layout_marginLeft="38dp"
+            android:layout_marginTop="5dp"
+            android:text="订单"
+            android:background="@drawable/bg_btn"/>
+        <ImageView
+            android:id="@+id/tixian"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_toRightOf="@id/dingdan"
+            android:src="@drawable/test_image" />
+
+        <Button
+            android:id="@+id/txan"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:layout_below="@id/dingdan"
+            android:layout_toRightOf="@id/ddan"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="5dp"
+            android:text="提现"
+            android:background="@drawable/bg_btn"/>
+
+        <Button
+            android:id="@+id/testbtn"
+            android:layout_width="60dp"
+            android:layout_height="60dp" 
+            android:layout_toRightOf="@id/txan"
+            android:layout_marginTop="60dp"
+            android:text="测试按钮"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:text="价格趋势"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:textColor="#000000"
+        android:textSize="13sp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="340dp"
+        android:layout_marginTop="25dp">
+
+        <ImageView
+            android:id="@+id/jgimg_1"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/test_image" />
+
+        <TextView
+            android:id="@+id/jgxs_1"
+            android:layout_width="65dp"
+            android:layout_height="20dp"
+            android:layout_below="@id/jgimg_1"
+            android:layout_marginLeft="15dp"
+            android:drawableTop="@drawable/down" />
+
+        <ImageView
+            android:id="@+id/jgmg_2"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_margin="10dp"
+            android:layout_toRightOf="@id/jgimg_1"
+            android:src="@drawable/test_image" />
+
+        <TextView
+            android:id="@+id/jgxs_2"
+            android:layout_width="65dp"
+            android:layout_height="20dp"
+            android:layout_alignTop="@+id/jgxs_1"
+            android:layout_marginLeft="32dp"
+            android:layout_toRightOf="@id/jgxs_1"
+            android:drawableTop="@drawable/up" />
+
+        <ImageView
+            android:id="@+id/jgmg_3"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_margin="10dp"
+            android:layout_toRightOf="@id/jgmg_2"
+            android:src="@drawable/test_image" />
+
+        <TextView
+            android:id="@+id/jgxs_3"
+            android:layout_width="65dp"
+            android:layout_height="20dp"
+            android:layout_alignTop="@+id/jgxs_2"
+            android:layout_marginLeft="32dp"
+            android:layout_toRightOf="@id/jgxs_2"
+            android:drawableTop="@drawable/up" />
+
+        <ImageView
+            android:id="@+id/jgmg_4"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_margin="10dp"
+            android:layout_toRightOf="@id/jgmg_3"
+            android:src="@drawable/test_image" />
+
+        <TextView
+            android:id="@+id/jgxs_4"
+            android:layout_width="65dp"
+            android:layout_height="20dp"
+            android:layout_alignTop="@+id/jgxs_3"
+            android:layout_marginLeft="32dp"
+            android:layout_toRightOf="@id/jgxs_3"
+            android:drawableTop="@drawable/down" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="120dp"
+            android:text="市场焦点"
+            android:textColor="#000000"
+            android:textSize="13sp" />
+
+    </RelativeLayout>
+
+
+    <com.example.lhx.recovery.layoutcontrol
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"
+
+        />
+
+
+</LinearLayout>

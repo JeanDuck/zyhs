@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <TimePicker
+        android:id="@+id/tpPicker"
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/sure2_btn"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/et3_phone"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="120dp"
+        android:text="确定"
+        android:textSize="20sp"/>
+
+</LinearLayout>

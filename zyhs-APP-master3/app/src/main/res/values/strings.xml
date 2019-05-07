@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">recovery</string>
+    <string name="gerenxinxi">个人信息</string>
+    <string name="hy">欢迎使用资源管理回收o2o平台     欢迎使用资源管理回收o2o平台</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
