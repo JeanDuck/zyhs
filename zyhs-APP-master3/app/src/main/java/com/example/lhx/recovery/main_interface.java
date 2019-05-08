@@ -22,14 +22,14 @@ public class main_interface extends AppCompatActivity {
         setContentView(R.layout.activity_main_interface);
 
         //测试按钮点击事件
-        t_btn = (Button) findViewById(R.id.testbtn);
+       /* t_btn = (Button) findViewById(R.id.testbtn);
         t_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(main_interface.this, person_Activity.class);
                 startActivity(intent);
             }
-        });
+        });*/
         //上面的预约订单按钮点击事件
         book_btn = (Button) findViewById(R.id.yyan);
         book_btn.setOnClickListener(new View.OnClickListener() {

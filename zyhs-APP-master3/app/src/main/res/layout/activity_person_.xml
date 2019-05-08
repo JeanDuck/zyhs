@@ -2,104 +2,109 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#fafafa"
+    >
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="550dp">
+
         <ImageView
             android:id="@+id/img_1"
             android:layout_width="120dp"
             android:layout_height="150dp"
-            android:layout_marginLeft="150dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/test_image" />
-
+        <Button
+            android:id="@+id/editaccount"
+            android:layout_width="122dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="20dp"
+            android:background="#f5f5f5"
+            android:text="修改" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_marginTop="180dp"
+            android:background="#abc6ab"
+            />
         <TextView
             android:id="@+id/name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginTop="200dp"
-
-            android:text="姓名:"
+            android:background="#f5f5f5"
+            android:text="姓名 "
+            android:textColor="#1a1919"
             android:textSize="20sp" />
 
         <TextView
             android:id="@+id/dianhua"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
             android:layout_below="@id/name"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="15dp"
-            android:text="电话:"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="8dp"
+            android:background="#f5f5f5"
+            android:text="电话 "
+            android:textColor="#1a1919"
             android:textSize="20sp" />
-        <Button
-            android:id="@+id/editaccount"
-            android:layout_width="122dp"
-            android:layout_height="24dp"
-            android:layout_below="@id/name"
-            android:layout_marginLeft="250dp"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/bg_btn"
-            android:text="修改" />
+
 
         <TextView
             android:id="@+id/yue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
             android:layout_below="@id/dianhua"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="15dp"
-            android:text="余额:"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="8dp"
+            android:background="#f5f5f5"
+            android:text="余额 "
+            android:textColor="#1a1919"
             android:textSize="20sp" />
 
         <Button
             android:id="@+id/see"
             android:layout_width="122dp"
-            android:layout_height="24dp"
-            android:layout_below="@id/dianhua"
-            android:layout_marginLeft="250dp"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/bg_btn"
-            android:text="查看余额详情" />
+            android:layout_height="40dp"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="120dp"
+            android:background="#f5f5f5"
+            android:text="余额" />
 
-        <TextView
-            android:id="@+id/bookordernumber"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/yue"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="15dp"
-            android:text="预约订单数量:"
-            android:textSize="20sp" />
+
 
         <Button
             android:id="@+id/addressman"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="400dp"
-            android:background="@drawable/bg_btn"
-            android:text="地址管理" />
+            android:layout_width="122dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="70dp"
+            android:background="#f5f5f5"
+            android:text="地址" />
 
         <Button
             android:id="@+id/exitlog"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="280dp"
-            android:layout_marginTop="400dp"
-            android:background="@drawable/bg_btn"
+            android:layout_width="122dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="220dp"
+            android:layout_marginTop="380dp"
+            android:background="#f5f5f5"
             android:text="退出登陆" />
 
         <Button
             android:id="@+id/changeaccount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="150dp"
-            android:layout_marginTop="400dp"
-            android:background="@drawable/bg_btn"
+            android:layout_width="122dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="380dp"
+            android:background="#f5f5f5"
             android:text="切换账户" />
+
     </RelativeLayout>
     <com.example.lhx.recovery.layoutcontrol
         android:layout_width="match_parent"
