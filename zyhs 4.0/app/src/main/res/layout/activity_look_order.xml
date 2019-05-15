@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+    <Button
+        android:id="@+id/creatorder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginRight="0dp"
+        android:text="创建订单"
+        android:textSize="20dp"/>
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/unfinished"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_weight="1"
+            android:text="未完成订单"
+            android:textSize="25dp"/>
+
+        <Button
+            android:id="@+id/finished"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_weight="1"
+            android:text="已完成订单"
+            android:textSize="25dp"/>
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/showorder"
+        android:layout_width="match_parent"
+        android:layout_height="420dp"
+        android:text="显示订单"
+        android:textSize="50dp"
+        />
+
+
+</LinearLayout>
+    <com.example.lhx.recovery.layoutcontrol
+        android:layout_width="400dp"
+        android:layout_height="56dp"
+        android:layout_gravity="bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </com.example.lhx.recovery.layoutcontrol>
+
+
+</android.support.constraint.ConstraintLayout>
