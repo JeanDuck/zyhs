@@ -16,10 +16,23 @@
         android:maxLines="1"
         android:drawableLeft="@drawable/zhanghu"/>
     <EditText
-        android:id="@+id/et3_phone"
+        android:id="@+id/et2_realname"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_below="@id/et1_name"
+        android:layout_marginTop="10dp"
+        android:textSize="16sp"
+        android:hint="姓名"
+        android:inputType="number"
+        android:background="@drawable/bg_intext"
+        android:maxLines="1"
+        android:drawableLeft="@drawable/zhanghu"
+        />
+    <EditText
+        android:id="@+id/et2_phone"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/et2_realname"
         android:layout_marginTop="10dp"
         android:textSize="16sp"
         android:hint="手机号"
@@ -31,10 +44,10 @@
         android:drawableLeft="@drawable/phone"
         android:drawablePadding="20dp"/>
     <EditText
-        android:id="@+id/iet2_mima"
+        android:id="@+id/edt3_mima"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_below="@id/et3_phone"
+        android:layout_below="@id/et2_phone"
         android:layout_marginTop="10dp"
         android:textSize="16sp"
         android:hint="密码"
@@ -44,10 +57,10 @@
         android:maxLines="1"
         android:drawableLeft="@drawable/mima"/>
     <EditText
-        android:id="@+id/iet2_querenmima"
+        android:id="@+id/et2_querenmima"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_below="@id/iet2_mima"
+        android:layout_below="@id/edt3_mima"
         android:layout_marginTop="10dp"
         android:textSize="16sp"
         android:hint="确认密码"
@@ -61,7 +74,7 @@
         android:id="@+id/res_btn"
         android:layout_width="120dp"
         android:layout_height="50dp"
-        android:layout_below="@id/iet2_querenmima"
+        android:layout_below="@id/et2_querenmima"
         android:layout_marginTop="20dp"
         android:layout_toRightOf="@id/load_btn"
         android:layout_marginLeft="115dp"

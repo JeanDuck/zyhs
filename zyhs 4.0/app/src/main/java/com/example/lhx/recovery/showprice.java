@@ -15,7 +15,6 @@ public class showprice extends AppCompatActivity {
     private Button btn_homeappliance;//家电回收
     private Button btn_furniture;//家具回收
     private Button btn_drygoods;//纺织品回收
-    private RadioGroup rpTab;
 @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,34 +69,7 @@ public class showprice extends AppCompatActivity {
         }
     });
 
-    /*rpTab = (RadioGroup)findViewById(R.id.navigation_btn);
-    rpTab.check(R.id.btn3);
-    rpTab.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-        @Override
-        public void onCheckedChanged(RadioGroup group, int checkedId) {
-            switch (checkedId) {
-                case R.id.btn1:
-                    Intent intent1 = new Intent(showprice.this,main_interface.class);
-                    startActivity(intent1);
-                    break;
-                case R.id.btn2:
-                    Intent intent2 = new Intent(showprice.this,lookorder.class);
-                    startActivity(intent2);
-                    break;
-                case R.id.btn3:
-                    break;
-                case R.id.btn4:
-                    Intent intent4 = new Intent(showprice.this,person_Activity.class);
-                    startActivity(intent4);
-                    break;
-                default:
-                    break;
-            }
 
-
-
-        }
-    });*/
 
 }
 }

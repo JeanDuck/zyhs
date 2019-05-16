@@ -1,58 +1,36 @@
 package com.example.lhx.recovery;
 
 import android.content.Intent;
-import android.os.Handler;
-import android.os.Message;
+import android.content.SharedPreferences;
+import android.os.Looper;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
-import com.google.gson.Gson;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-import java.io.IOException;
-import java.util.List;
 
-import okhttp3.FormBody;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
-import okhttp3.Response;
 
 public class LoadActivity extends AppCompatActivity {
     private Button loadbtn;//登陆按钮
     private Button registerbtn;//注册按钮
     private EditText logname;//用户名
     private EditText password;//密码
-    private String name,pwd;
-    private List<Loggson> list;
+    int flag;
 
-    final OkHttpClient client = new OkHttpClient();
-
-    private Handler mHandler = new Handler(){
-        @Override
-        public void handleMessage(Message msg){
-            if(msg.what==1){
-                String ReturnMessage = (String) msg.obj;
-                Log.i("获取的返回信息",ReturnMessage);
-                final Loggson log = new Gson().fromJson(ReturnMessage, Loggson.class);
-                final String logMsg = log.getMsg();
-                /***
-                 * 在此处可以通过获取到的Msg值来判断
-                 */
-                Log.i("MSG", logMsg);
-            }
-
-        }
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_load);
         //点击注册按钮进入登陆界面
+        final Intent intent=getIntent();
+        flag=intent.getIntExtra("flag",0);
         logname=(EditText)findViewById(R.id.et1_name);
         password=(EditText)findViewById(R.id.et2_pwd);
         loadbtn=(Button)findViewById(R.id.load_btn);
@@ -69,50 +47,119 @@ public class LoadActivity extends AppCompatActivity {
         loadbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                name=logname.getText().toString().trim();
-                pwd=password.getText().toString().trim();
-                //通过okhttp发起post请求
-                postRequest(name,pwd);
+                final String name=logname.getText().toString().trim();
+                final String pwd=password.getText().toString().trim();
+                final String urlStr="xxxxxxxxxxx";
+                if("".equals(name)||"".equals(pwd))
+                {
+
+                    Toast.makeText(LoadActivity.this,"账户和密码不能为空！",Toast.LENGTH_SHORT).show();
+
+                }
+                else
+                {
+                   new Thread(){
+
+                       @Override
+                       public void run() {
+                           String result= Internet.checkuser(urlStr,name,pwd);
+                           System.out.println(result);
+                           if (result.equals("not exsits"))
+                           {
+                               Looper.prepare();
+                               Toast.makeText(LoadActivity.this,"用户名不存在！",Toast.LENGTH_SHORT).show();
+                               Looper.loop();
+                           }
+                           else if(result.equals("internet error"))
+                           {
+                               Looper.prepare();
+                               Toast.makeText(LoadActivity.this,"网络连接错误！",Toast.LENGTH_SHORT).show();
+                               Looper.loop();
+                           }
+                           else{
+                               try {
+                                   JSONObject result_json=new JSONObject(result);
+
+                                   String message=result_json.getString("message:");
+                                   if("success".equals(message))
+                                   {
+                                       SharedPreferences user_data=getSharedPreferences("user_data",MODE_PRIVATE);
+                                       SharedPreferences.Editor et=user_data.edit();
+                                       et.putInt("user_id",result_json.getInt("userID"));
+                                       et.commit();
+                                       if(flag==2){
+                                           parseJSONWithJSONObject(result);//如果用户名密码匹配，将当前用户信息传递到个人信息处
+                                           Intent intent1=new Intent(LoadActivity.this,main_interface.class);//跳转到首页
+                                           startActivity(intent1);
+                                       }
+                                       finish();
+                                   }
+                                   else
+                                   {
+                                       Looper.prepare();
+                                       Toast.makeText(LoadActivity.this,"用户名或者密码错误！",Toast.LENGTH_SHORT).show();
+                                       Looper.loop();
+                                   }
+
+                               } catch (JSONException e) {
+                                   e.printStackTrace();
+                                   System.out.println(e.toString());
+                               }
+                           }
+                           super.run();
+                       }
+                   }.start();
+
+
+                }
+
+
+
+
             }
         });
 
     }
-    private void postRequest(String username,String password)
+
+
+    private void parseJSONWithJSONObject(String jsondata)
     {
-        //建立请求表单，添加上传服务器的参数
-        RequestBody formBody = new FormBody.Builder()
-                .add("username",name)
-                .add("password",pwd)
-                .build();
-        //发起请求
-        final Request request = new Request.Builder()
-                .url("http://**************/login?")
-                .post(formBody)
-                .build();
-       //线程用于得到服务器响应参数
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                Response response=null;
-                try{
-                    response = client.newCall(request).execute();
-                    if (response.isSuccessful()) {
-                        //将服务器响应的参数response.body().string())发送到hanlder中，并更新ui
-                        mHandler.obtainMessage(1, response.body().string()).sendToTarget();
-
-                    } else {
-                        throw new IOException("Unexpected code:" + response);
-                    }
+        try{
+            JSONArray jsonArray=new JSONArray(jsondata);
+            for(int i=0;i<jsonArray.length();i++)
+            {
+                JSONObject jsonObject=jsonArray.getJSONObject(i);
+                //String tvadd=jsonObject.getString("address");
+                /*
+                 * 需要返回的数据类型包括date，time，thingstype，thingsnumber，订单完成状态和订单总价
+                 */
+                String username=jsonObject.getString("username");//用户名
+                String phonenumber=jsonObject.getString("phonenumber");//电话
+                String balance=jsonObject.getString("balance");//余额
 
 
+                //传递值
+                Intent intent=new Intent(LoadActivity.this,person_Activity.class);
+                intent.putExtra("username",username);
+                intent.putExtra("phonenumber",phonenumber);
+                intent.putExtra("balance",balance);
+                startActivity(intent);
 
-                }catch (IOException e){
+                /*以下传递到查看余额界面*/
+                Intent intent2=new Intent(LoadActivity.this,seeyue.class);
+                intent2.putExtra("balance2",balance);
 
-                    e.printStackTrace();
-                }
 
             }
-        }).start();
+
+
+
+
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
 
 
 

@@ -89,7 +89,8 @@
                     android:layout_marginLeft="150dp"
                     android:layout_weight="1"
                     android:text="展示商品价格"
-                    android:textSize="30dp" />
+                    android:textSize="30dp"
+                    />
 
             </RelativeLayout>
         </LinearLayout>

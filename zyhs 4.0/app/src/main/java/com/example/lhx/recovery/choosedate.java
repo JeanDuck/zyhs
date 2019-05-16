@@ -49,7 +49,7 @@ public class choosedate extends AppCompatActivity
             date_btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    String data=date;
+                    //String data=date;
                     Intent intent=new Intent(choosedate.this,bookingorder.class);
                     intent.putExtra("extra_data",date);
                     startActivity(intent);

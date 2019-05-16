@@ -11,10 +11,7 @@ import android.widget.TextView;
 
 public class main_interface extends AppCompatActivity {
 
-    private Button t_btn;//测试按钮
     private Button book_btn;//预约按钮
-    private RadioGroup rpTab;
-    private RadioButton rbmain,rborder,rbprice,rbuser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,36 +29,7 @@ public class main_interface extends AppCompatActivity {
 
 
 
-       /* rpTab = (RadioGroup)findViewById(R.id.navigation_btn);
-        rpTab.check(R.id.btn1);
-        rpTab.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                switch (checkedId) {
-                    case R.id.btn1:
-                        //Intent intent = new Intent(g);
-                        break;
-                    case R.id.btn2:
-                        Intent intent2 = new Intent(main_interface.this,lookorder.class);
-                        startActivity(intent2);
-                        break;
-                    case R.id.btn3:
-                        Intent intent3 = new Intent(main_interface.this,showprice.class);
-                        startActivity(intent3);
-                        break;
-                    case R.id.btn4:
-                        Intent intent4 = new Intent(main_interface.this,person_Activity.class);
-                        startActivity(intent4);
 
-                        break;
-                    default:
-                        break;
-                }
-
-
-
-            }
-        });*/
 
     }
 
@@ -69,8 +37,3 @@ public class main_interface extends AppCompatActivity {
     }
 
 
- /*rbmain = (RadioButton)findViewById(R.id.btn1);
-        rborder = (RadioButton)findViewById(R.id.btn2);
-        rbprice = (RadioButton)findViewById(R.id.btn3);
-        rbuser = (RadioButton)findViewById(R.id.btn4);
-        rpTab.check(R.id.btn1);*/

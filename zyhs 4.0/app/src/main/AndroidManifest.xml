@@ -30,5 +30,6 @@
         <activity android:name=".showprice"></activity>
 
 
+
     </application>
 </manifest>
