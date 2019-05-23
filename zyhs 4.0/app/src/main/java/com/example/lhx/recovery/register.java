@@ -31,18 +31,17 @@ public class register extends AppCompatActivity {
         newphone=(EditText)findViewById(R.id.et2_phone);
         password=(EditText)findViewById(R.id.edt3_mima);
         surepsw=(EditText)findViewById(R.id.et2_querenmima);
-        realname=(EditText)findViewById(R.id.et2_realname);
         register=(Button)findViewById(R.id.res_btn);
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String urlStr="xxxxxxxxxxxx";
+                final String urlStr="http://10.0.2.2:8080/recovery/RegisterServlrt";
                 final String nname=newname.getText().toString().trim();
                 final String nphone=newphone.getText().toString().trim();
                 final String psw=password.getText().toString().trim();
-                final String real=realname.getText().toString().trim();
+                //final String real=realname.getText().toString().trim();
                 String spsw=surepsw.getText().toString().trim();
-                if("".equals(nname)||"".equals(nphone)||"".equals(psw)||"".equals(spsw)||"".equals(real))
+                if("".equals(nname)||"".equals(nphone)||"".equals(psw)||"".equals(spsw))
                 {
                     Toast.makeText(register.this,"输入信息不能为空！",Toast.LENGTH_SHORT).show();
                 }
@@ -62,15 +61,20 @@ public class register extends AppCompatActivity {
                        @Override
                        public void run() {
                            //newaccount(String urlStr,String user_password,String user_name,String user_phone,String user_surepsw)
-                           String result = Internet.newaccount(urlStr,psw,nname,nphone,real);
+                           String result = Internet.newaccount(urlStr,nname,nphone,psw);
                            System.out.println(result);
                            try{
-                               JSONObject result_json = new JSONObject(result);
-                               String message = result_json.getString("message:");
-                               if ("success".equals(message)) {
-                                   Intent newaccountload = new Intent(register.this,LoadActivity.class);//跳转到登陆界面
-                                   startActivity(newaccountload);//新用户登陆
+                               if(JsonUtil.isJson(result)){
+                                   JSONObject result_json = new JSONObject(result);
+                                   String message = result_json.getString("message");
+                                   Intent int_preson = new Intent(register.this,LoadActivity.class);
+                                   startActivity(int_preson);
                                    finish();
+                               }
+                               else {
+                                   Looper.prepare();
+                                   Toast.makeText(register.this, "用户已存在", Toast.LENGTH_SHORT).show();
+                                   Looper.loop();
                                }
 
                            }catch(JSONException e) {

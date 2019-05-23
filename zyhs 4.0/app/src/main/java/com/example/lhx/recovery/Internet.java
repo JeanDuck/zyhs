@@ -30,41 +30,7 @@ public class Internet {
         }
     }
 
-    public static String gethttppostresult(String urlStr, int id) {
-        String params = "{\"article_id\":1,\"user_id\":2}";
-        try {
-            URL url = new URL(urlStr);
-            HttpURLConnection connect = (HttpURLConnection) url.openConnection();
-            connect.setDoInput(true);
-            connect.setDoOutput(true);
-            connect.setRequestMethod("POST");//递交数据
-            connect.setUseCaches(false);
-            connect.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
-            OutputStream outputStream = connect.getOutputStream();
-            outputStream.write(params.getBytes());
-            int response = connect.getResponseCode();
-            if (response == HttpURLConnection.HTTP_OK) {
-                System.out.println(response);
-                InputStream input = connect.getInputStream();
-                BufferedReader in = new BufferedReader(new InputStreamReader(input));
-                String line = null;
-                System.out.println(connect.getResponseCode());
-                StringBuffer sb = new StringBuffer();
-                while ((line = in.readLine()) != null) {
-                    sb.append(line);
-                }
-                return sb.toString();
-            } else {
-                System.out.println(response);
-                return "not exsits";
-            }
-        } catch (Exception e) {
-            Log.e("e:", String.valueOf(e));
-            return "internet error";
-        }
-
-
-    }
+   
     /**
      * 检查用户账号密码是否正确
      * @param urlStr 接口url
@@ -73,35 +39,38 @@ public class Internet {
      * @return
      */
     public static String checkuser(String urlStr,String user_name,String user_password){
-        String params = "{\"user_name\":" +user_name +",\"user_password\":" + user_password+  "}";
+        com.alibaba.fastjson.JSONObject user=new com.alibaba.fastjson.JSONObject();
+        user.put("username",user_name);
+        user.put("password",user_password);
+        user.put("phone","null");
+        user.put("money",0);
         try {
-            URL url=new URL(urlStr);
-            HttpURLConnection connect=(HttpURLConnection)url.openConnection();
+            URL url = new URL(urlStr);
+            HttpURLConnection connect = (HttpURLConnection)url.openConnection();
             connect.setDoInput(true);
             connect.setDoOutput(true);
             connect.setRequestMethod("POST");
             connect.setUseCaches(false);
             connect.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
             OutputStream outputStream = connect.getOutputStream();
-            outputStream.write(params.getBytes());
+            outputStream.write(user.toJSONString().getBytes());
             int response = connect.getResponseCode();
-            if (response== HttpURLConnection.HTTP_OK)
-            {
+            if(response == HttpURLConnection.HTTP_OK){
                 System.out.println(response);
-                InputStream input=connect.getInputStream();
+                InputStream input = connect.getInputStream();
                 BufferedReader in = new BufferedReader(new InputStreamReader(input));
                 String line = null;
                 StringBuffer sb = new StringBuffer();
-                while ((line = in.readLine()) != null) {
+                while ((line = in.readLine()) != null){
                     sb.append(line);
                 }
                 return sb.toString();
             }
-            else {
+            else{
                 System.out.println(response);
                 return " ";
             }
-        } catch (Exception e) {
+        } catch (Exception e){
             Log.e("e:", String.valueOf(e));
             return e.toString();
         }
@@ -113,11 +82,10 @@ public class Internet {
      * @param user_password     用户输入的新密码
      * @param user_name     用户名
      * @param user_phone    用户手机号
-     * @param user_real 用户真实姓名
      * @return
      */
-    public static String newaccount(String urlStr,String user_password,String user_name,String user_phone,String user_real){
-        String params = "{\"user_password\":" +user_password +",\"user_name\":" + user_name+  ",\"user_phone\":"+user_phone+ "，\"user_real\":"+user_real+"}";
+    public static String newaccount(String urlStr,String user_name,String user_phone,String user_password){
+        String params = "{,\"username\":" + user_name+  ",\"phone\":"+user_phone+ "，\"password\":"+user_password+"}";
         try {
             URL url=new URL(urlStr);
             HttpURLConnection connect=(HttpURLConnection)url.openConnection();

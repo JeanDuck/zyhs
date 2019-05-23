@@ -5,11 +5,11 @@ import android.content.SharedPreferences;
 import android.os.Looper;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -49,7 +49,8 @@ public class LoadActivity extends AppCompatActivity {
             public void onClick(View v) {
                 final String name=logname.getText().toString().trim();
                 final String pwd=password.getText().toString().trim();
-                final String urlStr="xxxxxxxxxxx";
+                //final String sign="1";
+                final String urlStr="http://10.0.2.2:8080/recovery/LoginServlet";
                 if("".equals(name)||"".equals(pwd))
                 {
 
@@ -64,6 +65,7 @@ public class LoadActivity extends AppCompatActivity {
                        public void run() {
                            String result= Internet.checkuser(urlStr,name,pwd);
                            System.out.println(result);
+                           Log.v("LoadActivity result", "result");
                            if (result.equals("not exsits"))
                            {
                                Looper.prepare();
@@ -78,20 +80,20 @@ public class LoadActivity extends AppCompatActivity {
                            }
                            else{
                                try {
-                                   JSONObject result_json=new JSONObject(result);
+                                   //JSONObject result_json=new JSONObject(result);
 
-                                   String message=result_json.getString("message:");
-                                   if("success".equals(message))
+                                   //String message=result_json.getString("message:");
+                                   if(JsonUtil.isJson(result))
                                    {
+                                       JSONObject result_json = new JSONObject(result); //result " "
+                                       String message=result_json.getString("message");
                                        SharedPreferences user_data=getSharedPreferences("user_data",MODE_PRIVATE);
                                        SharedPreferences.Editor et=user_data.edit();
-                                       et.putInt("user_id",result_json.getInt("userID"));
-                                       et.commit();
-                                       if(flag==2){
-                                           parseJSONWithJSONObject(result);//如果用户名密码匹配，将当前用户信息传递到个人信息处
-                                           Intent intent1=new Intent(LoadActivity.this,main_interface.class);//跳转到首页
-                                           startActivity(intent1);
-                                       }
+                                       et.putString("username",name);
+                                       et.apply();
+
+                                       Intent intent1=new Intent(LoadActivity.this,person_Activity.class);
+                                       startActivity(intent1);
                                        finish();
                                    }
                                    else
