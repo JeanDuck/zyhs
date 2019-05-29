@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".main_interface"
+    android:id="@+id/linear"
+    >
+
+
+
+    <TextView
+        android:id="@+id/huanyin"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:text="@string/hy"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:focusable="true"
+        android:focusableInTouchMode="true"/>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:id="@+id/yyan"
+            android:layout_width="95dp"
+            android:layout_height="90dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/clock3"
+             />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="100dp"
+            android:text="预约"
+            />
+
+        <Button
+            android:id="@+id/ddan"
+            android:layout_width="95dp"
+            android:layout_height="90dp"
+            android:layout_marginLeft="145dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/order" />
+
+        />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="175dp"
+            android:layout_marginTop="100dp"
+            android:text="订单" />
+
+        <Button
+            android:id="@+id/txan"
+            android:layout_width="95dp"
+            android:layout_height="90dp"
+            android:layout_marginLeft="270dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/money" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="300dp"
+            android:layout_marginTop="100dp"
+            android:text="提现"
+            />
+
+    </RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_marginTop="0dp"
+        android:background="#abc6ab"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="340dp"
+        android:layout_marginTop="25dp">
+
+        <ImageView
+            android:id="@+id/jgimg_1"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/can" />
+
+        <TextView
+            android:id="@+id/jgxs_1"
+            android:layout_width="65dp"
+            android:layout_height="20dp"
+            android:layout_below="@id/jgimg_1"
+            android:layout_marginLeft="15dp"
+            android:drawableTop="@drawable/down" />
+
+        <ImageView
+            android:id="@+id/jgmg_2"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_margin="10dp"
+            android:layout_toRightOf="@id/jgimg_1"
+            android:src="@drawable/charge" />
+
+        <TextView
+            android:id="@+id/jgxs_2"
+            android:layout_width="65dp"
+            android:layout_height="20dp"
+            android:layout_alignTop="@+id/jgxs_1"
+            android:layout_marginLeft="32dp"
+            android:layout_toRightOf="@id/jgxs_1"
+            android:drawableTop="@drawable/up" />
+
+        <ImageView
+            android:id="@+id/jgmg_3"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_margin="10dp"
+            android:layout_toRightOf="@id/jgmg_2"
+            android:src="@drawable/paper" />
+
+        <TextView
+            android:id="@+id/jgxs_3"
+            android:layout_width="65dp"
+            android:layout_height="20dp"
+            android:layout_alignTop="@+id/jgxs_2"
+            android:layout_marginLeft="32dp"
+            android:layout_toRightOf="@id/jgxs_2"
+            android:drawableTop="@drawable/up" />
+
+        <ImageView
+            android:id="@+id/jgmg_4"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_alignTop="@+id/jgimg_1"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_toRightOf="@id/jgmg_3"
+            android:src="@drawable/jiadian" />
+
+        <TextView
+            android:id="@+id/jgxs_4"
+            android:layout_width="65dp"
+            android:layout_height="20dp"
+            android:layout_alignTop="@+id/jgxs_3"
+            android:layout_marginLeft="32dp"
+            android:layout_toRightOf="@id/jgxs_3"
+            android:drawableTop="@drawable/down" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:id="@+id/market"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="120dp"
+            android:text="市场焦点"
+            android:textColor="#000000"
+            android:textSize="13sp" />
+
+        <ImageView
+            android:layout_width="372dp"
+            android:layout_height="104dp"
+            android:layout_below="@+id/market"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/xinwen" />
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>
+
+    <com.example.lhx.recovery.layoutcontrol
+        android:layout_width="400dp"
+        android:layout_height="56dp"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"></com.example.lhx.recovery.layoutcontrol>
+</android.support.constraint.ConstraintLayout>
+
+
